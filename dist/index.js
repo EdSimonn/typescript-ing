@@ -52,3 +52,39 @@ console.log(addNum(1, 2));
 function log(message) {
     console.log(message);
 }
+const user1 = {
+    id: 1,
+    name: 'John',
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+// Classes 
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const simon = new Person(2, 'Simon Winston');
+const cynthia = new Person(2, 'Cynthia George');
+console.log(simon, cynthia);
+// SubClass : extends Person from Person class
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(4, 'John', 'Baker');
+console.log(emp.register());
+// Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5]);
+let strArray = getArray(['simon', 'cynthia', 'lucas']);
+numArray.push(1);
+strArray.push('john');
